@@ -1,0 +1,15 @@
+{
+  "deviceID": "24080109375780391509",
+  "side": "left",
+  "vendor": "carrier",
+  "socketMode": "server",
+  "deviceName": "trc office",
+  "cancelMode": true,
+  "lotteDebug": true,
+  "shelfNum": 4,
+  "aiHost": "14.52.146.133",
+  "adultMode": false,
+  "storeName": "popeyes",
+  "storeId": "popeyes_0002_0000",
+  "deviceType": "t_00001"
+}

@@ -1,0 +1,10 @@
+{
+  "deviceID": "22090504085284914975",
+  "side": "left",
+  "vendor": "carrier",
+  "socketMode": "server",
+  "deviceName": "trc office",
+  "cancelMode": true,
+  "lotteDebug": true,
+  "shelfNum": 4
+}
