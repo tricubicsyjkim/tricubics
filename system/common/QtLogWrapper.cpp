@@ -47,8 +47,9 @@ void QtLogWrapper::Start()
 {
     qInstallMessageHandler(CSingleTon<QtLogWrapper>::getInstancePtr()->_log);
 }
-
-void QtLogWrapper::Output(QtMsgType type, const QMessageLogContext &context, const QString &msg) 
+//sean_051024
+//void QtLogWrapper::Output(QtMsgType type, const QMessageLogContext &context, const QString &msg)
+void QtLogWrapper::Output(QtMsgType /*type*/, const QMessageLogContext &/*context*/, const QString &msg)
 {
     QMutexLocker locker(&logMutex);
 

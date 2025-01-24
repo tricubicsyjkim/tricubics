@@ -91,4 +91,6 @@ QString ImageWriter::findCamId(const QString devName)
             return cam_id;
         }
     }
+    //sean_050124
+    return "0";
 }

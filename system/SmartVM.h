@@ -43,7 +43,7 @@ const QString DEVICE_OPEN_="deviceOpen";
 #define ZEROMQ
 #define TIMEOUT 120
 #define CAMERA_CAPTURE_DELAY 10
-#define SHELF_NUM 4
+//sean_051024 #define SHELF_NUM 4
 
 
 class SmartVM : public SignalActorImpl

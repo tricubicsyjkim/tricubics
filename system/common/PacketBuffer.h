@@ -37,6 +37,7 @@ public:
     bool GetData(int nSize, uint8_t* pData, int nPos = -1);
 
     void AppendBuffer(const char* strFormat, ...);
+    void AppendBuffer(int strFormat, ...);
 
     // returns A pointer to the Buffer
     uint8_t* GetBuffer();

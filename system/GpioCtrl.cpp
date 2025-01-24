@@ -70,7 +70,8 @@ int GpioCtrl::set(GpioValue value) {
             // ERROR!!
             result = -1;
         } else {
-            int level;
+            //sean_050124
+            int level=0;
             if (value == GPIO_LOW) {
                 level = EAPI_GPIO_LOW;
             } else if (value == GPIO_HIGH) {

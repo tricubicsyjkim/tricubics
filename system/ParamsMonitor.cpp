@@ -1,6 +1,6 @@
 #include "ParamsMonitor.h"
-
-ParamsMonitor::ParamsMonitor(QObject *parent)
+//sean_050124
+ParamsMonitor::ParamsMonitor(QObject * /*parent*/)
 {
     connect(&polling_timer_, SIGNAL(timeout()), this, SLOT(on_polling()));
 }

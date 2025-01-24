@@ -5,13 +5,21 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <stdarg.h>
+//sean_050124 #include <stdarg.h>
+
+//sean_050124
+#include <cstdarg>
+//#include <iostream>
+
+
+
 
 #ifndef max
 #define max(a,b) (((a) > (b)) ? (a) : (b))
 #endif
 
-#define SAFE_DELETE_ARR(x) { if(x) delete [] x;x=NULL; }
+//sean_00124 #define SAFE_DELETE_ARR(x) { if(x) delete [] x;x=NULL; }
+#define SAFE_DELETE_ARR(x) { if(x) delete [] x;x=nullptr; }
 
 
 #ifndef max
@@ -57,7 +65,8 @@ bool CPacketBuffer::SetSize(unsigned int nSize)
     int nNewSize = nSize + (nSize%1024);
 
     uint8_t* pNewBuffer = new uint8_t[nNewSize];
-    if(pNewBuffer == NULL)
+    //sean_050124
+    if(pNewBuffer == nullptr)
         return false;
     
     if(m_nUsed>0)
@@ -87,7 +96,8 @@ uint8_t *CPacketBuffer::GetBuffer()
 uint8_t *CPacketBuffer::GetBuffer(unsigned int nPos)
 {
     if(nPos>=m_nMaxSize)
-        return NULL;
+        //sean_050124
+        return nullptr;
     return (m_pBuffer+nPos);
 }
 
@@ -95,6 +105,8 @@ void CPacketBuffer::AppendBuffer(const char* strFormat, ...)
 {
     char sBuffer[4096] = { 0, };
     va_list args;
+    //sean
+
     va_start(args, strFormat);
 #ifdef WIN32
     vsnprintf_s(sBuffer, 4096, strFormat, args);
@@ -114,13 +126,15 @@ bool CPacketBuffer::AddData(uint8_t data, int nPos)
 
 bool CPacketBuffer::AddData(unsigned int data, int nPos)
 {
-    return AddData((const uint8_t * const)(&data), sizeof(unsigned int), nPos);
+   //sean  return AddData((const uint8_t * const)(&data), sizeof(unsigned int), nPos);
+    return AddData(reinterpret_cast<const uint8_t *>(&data), sizeof(unsigned int), nPos);
 }
 
 
 bool CPacketBuffer::AddData(unsigned short data, int nPos)
 {
-    return AddData((const uint8_t * const)(&data), sizeof(unsigned short), nPos);
+   //sean return AddData((const uint8_t * const)(&data), sizeof(unsigned short), nPos);
+    return AddData(reinterpret_cast<const uint8_t *>(&data), sizeof(unsigned short), nPos);
 }
 
 /*
@@ -129,7 +143,8 @@ bool CPacketBuffer::AddData(unsigned short data, int nPos)
 */
 bool CPacketBuffer::AddData(const char *const pData, unsigned int nSize, int nPos)
 { 
-    return AddData((const uint8_t * const)(pData),nSize, nPos);
+    //sean return AddData((const uint8_t * const)(pData),nSize, nPos);
+    return AddData(reinterpret_cast<const uint8_t *>(&pData),nSize, nPos);
 }
 
 /*

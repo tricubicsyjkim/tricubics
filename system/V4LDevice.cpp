@@ -209,7 +209,7 @@ int V4LDevice::printCapabilities()
                     {
                         struct v4l2_fmtdesc fmt;
                         struct v4l2_frmsizeenum frmsize;
-                        struct v4l2_frmivalenum frmival;
+                        //sean_050124  struct v4l2_frmivalenum frmival;
 
                         fmt.index = 0;
                         fmt.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;

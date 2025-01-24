@@ -62,7 +62,7 @@ size_t V4LGrabber::write(char *data, size_t len)
     return device_->writeImpl(data, len);
 }
 
-void V4LGrabber::set_multi_touch_off(bool status)
+void V4LGrabber::set_multi_touch_off(bool /*status*/)
 {
     //    device_->multi_touch_off = status;
 }
