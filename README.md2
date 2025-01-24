@@ -1,6 +1,7 @@
 # tricubics
 system : serial,usb ... control
 lightserver: nodejs
+refer from system_lightserver.pdf
 
 
 github에 있는 프로젝트
